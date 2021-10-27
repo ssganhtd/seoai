@@ -56,7 +56,7 @@ class SEOAI_Save_Images
 
     function save_images($image_url, $post_id)
     {
-        $file = $this->wp_remote_get($image_url);
+        $file = wp_remote_get($image_url);
         $post = get_post($post_id);
         $posttitle = $post->post_title;
         $postname = sanitize_title($posttitle);
