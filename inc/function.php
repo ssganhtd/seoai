@@ -97,11 +97,11 @@ function seoai_display_posts_spin($column, $post_id)
     if ($column == 'spin') {
         $spined = get_post_meta($post_id, 'spined_txt', true);
         $checked = '';
-        echo '<div class="spin-action"><button class="btn-spin" type="button" onclick="seoai_spin(' . $post_id . ')">Spin</button>';
+        echo  '<div class="spin-action"><button class="btn-spin" type="button" onclick="seoai_spin(' . sanitize_text_field($post_id) . ')">Spin</button>';
         if (isset($spined) && $spined != '') {
             $checked = 'icon-spined';
         }
-        echo '<i class="icon-status ' . $checked . '" id="icon-status-' . $post_id . '"></i></div>';
+        echo  '<i class="icon-status ' . sanitize_text_field($checked) . '" id="icon-status-' . sanitize_text_field($post_id) . '"></i></div>';
     }
 }
 
